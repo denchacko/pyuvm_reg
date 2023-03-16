@@ -27,3 +27,10 @@ def print_multiline(string, return_val = False):
 def fatal_exit(msg = "", status = 1):
     print(f"FATAL: {msg}. exit_status = {status}")
     exit(status)
+
+def get_int(signal):
+    try:
+        sig = int(signal.value)
+    except ValueError:
+        sig = 0
+    return sig

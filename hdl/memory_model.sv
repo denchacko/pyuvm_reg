@@ -15,7 +15,7 @@
                 wr_en  rd_en
 
 -------------------------------------------------------------------------- */
-module memory
+module memory_model
     #(  parameter ADDR_WIDTH = 4,
         parameter DATA_WIDTH = 8 
     )
@@ -54,7 +54,7 @@ module memory
     `ifdef COCOTB_SIM
         initial begin
             $dumpfile ("memory.vcd");
-            $dumpvars (0, memory);
+            $dumpvars (0, memory_model);
             #1;
         end
     `endif

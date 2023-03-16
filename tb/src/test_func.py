@@ -31,3 +31,25 @@ def test_seq_item():
     seq_item.data = 0xcc
     seq_item.randomize()
     print(f'SeqItem all fixed: {seq_item.convert2string()}')
+
+def test_inst_var():
+    '''
+    To test instance variable scope
+    '''
+    class Class:
+        def __init__(self):
+            self.A = 10
+
+        def initialise(self, val = 20):
+            self.B = val
+
+        def print_var(self):
+            print(f"A: {self.A} B: {self.B}")
+
+    inst = Class()
+    inst.initialise()
+
+    inst_2 = Class()
+    inst_2.initialise(30)
+    inst_2.print_var()
+    inst.print_var()
